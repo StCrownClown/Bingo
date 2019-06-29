@@ -22,8 +22,11 @@ Thumbs.db
 *.lib
 *.sbr
 *.dll
-obj
+*.suo
+*.user
+_ReSharper.*
 bin
+obj
 packages
 .DS_Store
 .vscode

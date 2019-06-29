@@ -92,7 +92,7 @@ namespace Bingo
             {
                 int[] checkNumber = _split(input);
 
-                if (Regex.IsMatch(input, @"^[1-9\,]+$"))
+                if (Regex.IsMatch(input, @"^[1-9\,\ ]+$"))
                 {
                     isValid = true;
                 }
