@@ -36,8 +36,11 @@ namespace Bingo
         }
 
         delegate int[] runNumber(int from, int to);
+        
         static readonly Func<string, int[]> _split = i => i.Split(',').Select(a => Convert.ToInt32(a)).ToArray();
+        
         static readonly Func<string, bool> _trysplit = i => i.Split(',').Any(s => int.TryParse(s, out int number));
+        
         public static void ValidateInput(ref string input, ref int[] bingoMark, ref bool isValid)
         {
             while (!isValid)
@@ -48,7 +51,6 @@ namespace Bingo
                 Console.WriteLine("Do not input special character and alphabet");
                 Console.WriteLine("Split each Number by commas (,)");
                 Console.WriteLine("Example input format: 1,2,3,4,5");
-
                 Console.WriteLine("Please enter bingo input numbers");
 
                 input = Console.ReadLine();
@@ -60,6 +62,7 @@ namespace Bingo
                     if (!isValid)
                     {
                         Console.WriteLine("Invalid input");
+                        
                         isValid = false;
                         continue;
                     }
@@ -69,6 +72,7 @@ namespace Bingo
                 catch
                 {
                     Console.WriteLine("Invalid input");
+                    
                     isValid = false;
                     continue;
                 }
@@ -97,6 +101,7 @@ namespace Bingo
                 {
                     isValid = true;
                     List<int> uniqueNumber = new List<int>();
+                    
                     foreach (int item in checkNumber)
                     {
                         if (item > 0 && item <= 25)
@@ -138,6 +143,7 @@ namespace Bingo
         public static void PlayAgain(ref string input, ref bool again, ref bool isValid)
         {
             Console.WriteLine("Do you want to play again ? (Y/N)");
+            
             input = Console.ReadLine();
 
             if (input.ToUpper() == "Y")
@@ -194,6 +200,7 @@ namespace Bingo
                 {
                     Console.Write("[ " + (string.Format("{0,2}", bingo2d[i, j])) + " ] \t");
                 }
+                
                 Console.WriteLine();
             }
         }
