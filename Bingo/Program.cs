@@ -48,12 +48,13 @@ namespace Bingo
                 Console.WriteLine("########## Validate ##########");
                 Console.WriteLine("Count of numbers should more than 5 numbers");
                 Console.WriteLine("Value of Numbers must between 1-25 and do not repeated");
-                Console.WriteLine("Do not input special character and alphabet");
+                Console.WriteLine("Not alphabets or special character except brackets");
                 Console.WriteLine("Split each Number by commas (,)");
-                Console.WriteLine("Example input format: 1,2,3,4,5");
+                Console.WriteLine("Example input: 1,2,3,4,5 or [1, 2, 3, 4, 5]");
                 Console.WriteLine("Please enter bingo input numbers");
 
                 input = Console.ReadLine();
+                input = input.Replace("]", "").Replace("[", "").Trim();
 
                 try
                 {
@@ -67,7 +68,7 @@ namespace Bingo
                         continue;
                     }
 
-                    bingoMark = _split(input.Trim());
+                    bingoMark = _split(input);
                 }
                 catch
                 {
