@@ -31,7 +31,7 @@ namespace Bingo
 
                 CheckAnswer(bingo2d, answer);
 
-                PlayAgain(ref input, ref again, ref isValid);
+                PlayAgain(ref again, ref isValid);
             }
         }
 
@@ -141,11 +141,11 @@ namespace Bingo
             return Enumerable.Range(from, to).OrderBy(g => Guid.NewGuid()).Take(25).ToArray();
         }
 
-        public static void PlayAgain(ref string input, ref bool again, ref bool isValid)
+        public static void PlayAgain(ref bool again, ref bool isValid)
         {
             Console.WriteLine("Do you want to play again ? (Y/N)");
-            
-            input = Console.ReadLine();
+
+            string input = Console.ReadLine();
 
             if (input.ToUpper() == "Y")
             {
